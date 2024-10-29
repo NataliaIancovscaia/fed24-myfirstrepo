@@ -92,7 +92,7 @@ if (contains) {
 } else {
 	console.log("Password does not contain special characters.");
 }*/
-for (let i = 0; i < specialChars.length; i++) {
+/*for (let i = 0; i < specialChars.length; i++) {
     const con = password.includes(specialChars[i]);
     let specialCharCount = 0;;
   
@@ -115,5 +115,37 @@ for (let i = 0; i < specialChars.length; i++) {
         console.log(" Password contains at least two special characters.");
     } 
     else {console.log("password är inte giltigt")}
+    }*/
+
+
+    let specialCharCount=0;
+
+for(let i=0;i<specialChars.length;i++){
+    const char=password[i];
+    console.log("at index  $[i] password contents ");
+
+    if(password.includes(char)){
+        specialCharsCount++;
+
+		if (specialCharCount === 2) {
+    break;
+
     }
+}console.log("Loop is done");
+    if(password>=16){
+        console.log("This is a long password");
+    }
+    else if(password>=12&&/*password.indexOf("-")!==-1*/  password.includes("-")){
+        console.log("password har -")
+    }
+
+    else if(password.length>=8&&specialCharsCount>=1)  {
+        console.log("such password much security");
+    }  
+    else if(password.length>=8&&specialCharsCount>=2)  {
+        console.log("such password muchmuuuuuuuuuuch security");
+    }  
+
+    else {console.log("Insecurity password");}
+}
 
